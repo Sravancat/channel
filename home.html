@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Labs</title>
+    <link rel="icon" type="image/x-icon" href="images/IIITH.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navb">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo/image">
+            </div>
+            <div class="hitam">
+                <img src="images/Hitam.png" alt="hitam">
+            </div>
+            <div class="IIIT">
+                <img src="images/IIITH.png" alt="IIITH">
+            </div>
+        </nav>
+    </header>
+    <div class="welcome">
+    <h2>Welcome To</h2>
+    <h1>Remote Labs</h1><br>
+    <p>Perform science and electrical experiments remotely. <br>To learn more about Remote labs visit the reference page.<br>Click the button below to know more.</p>
+    <form action="https://blogs.iiit.ac.in/rtl/" class="inline">
+        <button id="ref">Reference</button>
+    </form>
+    
+    </div>
+    <div class="card">
+        <h1>Experiment</h1><br>
+        <img src="images/single-phase_transformer.png" alt="Description Image"><br>
+        <h2>SHORT CIRCUIT TEST ON SINGLE PHASE TRANSFORMER</h2><br>
+        <div id="status" class="online"></div>
+       <div class="buttons">
+            <a href="about.html" class="button" id="AboutButton">About</a>
+            <a href="dashboard.html" class="button" id="dashboardButton">Dashboard</a>
+        </div>
+    </div>
+    <button id="signOutButton">Sign Out</button>
+</body>
+<script src="signOut.js" type="module"></script>
+<script>
+    const authToken = 'Ww-Kf8XJeNW2Aqspihvw3KxPLs0A2xDh';
+
+    // Function to get Blynk device status
+    function getBlynkStatus() {
+        fetch(`https://blynk.cloud/external/api/isHardwareConnected?token=${authToken}`)
+            .then(response => response.json())
+            .then(data => {
+                const statusElement = document.getElementById('status');
+                if (data == 1) {
+                    statusElement.textContent = 'Device Online';
+                    statusElement.classList.remove('offline');
+                    statusElement.classList.add('online');
+                } else {
+                    statusElement.textContent = 'Device Offline Refresh and Try again';
+                    statusElement.classList.remove('online');
+                    statusElement.classList.add('offline');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+    const dashboardButton = document.getElementById('dashboardButton');
+    dashboardButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        getBlynkStatus(); 
+
+        setTimeout(function() {
+            const statusElement = document.getElementById('status');
+            if (statusElement.textContent === 'Device Online') {
+                window.location.href = 'dashboard.html';
+            }
+        }, 2000);
+    });
+</script>
+</html>

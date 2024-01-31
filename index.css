@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: auto;
+    width: auto;
+    background-color: rgb(169, 227, 247);
+}
+
+.logo img {
+    margin-left: 4%;
+    margin-top: 2%;
+    width: 10%;
+    height: 5%;
+}
+
+.IIIT img {
+    height: 50px;
+    width: 100px;
+    margin-left: 92%;
+    margin-top: -20%;
+    margin-bottom:30px;
+}
+
+.hitam img {
+    height: 70px;
+    width: 60px;
+    margin-top: -3%;
+    margin-left: 85%;
+}
+
+.card {
+    position:relative;
+    text-align: center;
+    display: flex;
+    border-radius: 2%;
+    margin: 2% 0 0 16%;
+    align-items: center;
+    height: 80vh;
+    width: 100%; 
+    max-width: 150vh; 
+    background-color: rgb(245, 242, 242);
+}
+
+.card img {
+    height: 100%;
+    width: 55%;
+    border-radius: 2% 5% 5% 2%;
+}
+
+.container {
+    margin: 8%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width:auto;
+    height:auto;
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(6, 6, 6);
+
+}
+
+h2 {
+    margin: 0 0 1rem;
+}
+
+input {
+    width: 93%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #0b0b0b;
+    border-radius: 10px;
+}
+
+button {
+    width: 103%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    text-transform: uppercase;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body{
+        display:flexbox;
+    }
+    .card{
+        display:flex;
+        flex-direction: column;
+        border-radius: 2%;
+        margin: 12% 0 0 6%;
+        width:90%;
+        height:70%;
+    }
+
+    .card img{
+        display:none;
+    }
+
+    .IIIT img {
+        align-items:inherit;
+        display:flex;
+        margin-left: 80%;
+        margin-top: -60px;
+        height:60px;
+
+    }
+
+    .hitam img {
+        margin-left: 65%; 
+        height:60px;
+    }
+
+    .logo img{
+        height:40%;
+        width:25%;
+    }
+}
+
+@media screen and(min-width:769px) and (max-width: 1200px) {
+    .card {
+        text-align: center;
+        display: grid;
+        border-radius: 2%;
+        margin-left: 1px;
+        margin-right:20px;
+        height: 80%;
+        width: auto; 
+        background-color: rgb(245, 242, 242);
+    }
+    .card img {
+        height: 50%;
+        width: 50%;
+        border-radius: 2% 5% 5% 2%;
+    }
+
+    .IIIT img {
+        align-items:inherit;
+        display:flex;
+        margin-left: 100%;
+        margin-top: -60px;
+        height:60px;
+
+    }
+    .hitam img {
+        margin-left: 75%; 
+        height:60px;
+    }
+}

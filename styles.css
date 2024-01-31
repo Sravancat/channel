@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    height: auto;
+    width: 100%;
+    background-color: rgb(169, 227, 247);
+}
+.logo img{
+    height:25%;
+    width:18%;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.hitam img{
+    height: 70px;
+    width: 60px;
+    margin-top:2%;
+    margin-left: 730%;
+}
+
+.IIIT img{
+    height: 60px;
+    width: 100px;
+    margin-left: 460%;
+ }
+
+.navb{
+    flex-direction: row;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color:rgba(250, 246, 246, 0.985);  
+    width:auto; 
+    display:flex;
+    max-width: 1600px;
+ }
+ #status{
+    font-size: 15px;
+    color:red;
+ }
+
+.card{
+    text-align: center;
+    margin-top: -16% ;
+    margin-left: 60%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width:25%;
+    height:80%;
+    background-color: rgb(242, 255, 240);
+    color: rgb(6, 6, 6);
+}
+.card img{
+    width:40%;
+    height:70%;
+}
+.buttons{
+    display: flex;
+    margin-top: 15%;
+    justify-content: space-between;
+}
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #686969;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #9fa1a1;
+}
+
+#signOutButton{
+    padding: 10px;
+    width: 5%;
+    background: #686969;
+    color: white;
+    cursor: pointer;
+    float: right;
+    margin-right: 1%;
+    margin-top: -36%;
+    border-radius: 9px;
+}
+
+
+#signOutButton:hover {
+    background: #9fa1a1;
+}
+.welcome{
+    margin:8% 0 0 8%;
+    font-size:x-large;
+    font-display:inherit;
+}
+#ref{
+    background: #686969;
+    color: white;
+    border-radius: 10px;
+    width:90px;
+    height:40px;
+    margin-top: 1%;
+}
+#ref:hover {
+    background: #9fa1a1;
+}
+
+/* Responsive Design */
+@media screen and (min-width:200px) and (max-width: 800px) {
+    .navb {
+        flex-direction: row;
+        align-items: center;
+        width:auto;
+        
+    }
+
+    .hitam img,
+    .IIIT img {
+        margin-left: 0;
+        height:60px;
+    }
+
+    .logo img{
+        height:35%;
+        width:30%;
+    }
+    .card {
+       width:auto;
+       margin-top: 17px;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+
+    #signOutButton {
+        float: left;
+        padding:13px;
+        width: 22%;
+        margin-top: 30px;
+        margin-left:40%;
+        position:absolute;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width: 1068px) {
+    .navb {
+        display:flex;
+        flex-direction:row;
+        max-width:auto;
+        height:auto;
+    }
+
+    .hitam img,
+    .IIIT img {
+        margin-left: 20px;
+        height: 60px; 
+        width: auto;
+        float:inline-start;
+    }
+
+    .logo img{
+        height:30%;
+        width:20%;
+    }
+    .welcome{
+        margin:8% 0 0 3%;
+        font-size:medium;
+    }
+    .card {
+        width:300px;
+        margin-left:45%;
+    }
+
+    #signOutButton {
+        width: auto;
+        margin-top:-500px;
+        margin-bottom: 90px;
+        margin-left:160px;
+    }
+}
+
+@media screen and (min-width:1069px) and (max-width:1489px){
+    .navb {
+        display:flex;
+        flex-direction:row;
+        max-width :1489px;
+        height:auto;
+    }
+
+    .IIIT img {
+        display:flex;
+        flex-direction: row;
+        margin-left: 250px;
+        height: 60px; 
+        width: auto;
+        float:inline-start;
+    }
+
+    .logo img{
+        height:30%;
+        width:20%;
+    }
+    .welcome{
+        margin:8% 0 0 6%;
+        font-size:large;
+    }
+    .card {
+        width:400px;
+        margin-left:56%;
+    }
+
+    #signOutButton {
+        width: auto;
+        margin-top:-540px;
+        margin-bottom: 80px;
+        margin-left:140px;
+    }    
+}
