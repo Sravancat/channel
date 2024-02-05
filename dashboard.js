@@ -1,17 +1,11 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
 
-    const auth = getAuth();  // Assuming Firebase has been initialized globally
-
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            // User is signed in, allow access to the dashboard
-            initializeDashboard();
-        } else {
-            // User is not signed in, redirect to the login page
-            window.location.replace("login.html");
-        }
-    });
+   firebase.auth().onAuthStateChanged(user => {
+if(!user) {
+window.location = 'login.html'; //If User is not logged in, redirect to login page
+}
+});
 
     let btn = document.getElementById('On');
     const slider = document.getElementById("myRange");
