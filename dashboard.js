@@ -1,25 +1,7 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
 
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDSAAqD1a73N5REtR8zYRwFxEm-oyhYtmA",
-   authDomain: "rtl-auth-36651.firebaseapp.com",
-   databaseURL: "https://rtl-auth-36651-default-rtdb.firebaseio.com",
-   projectId: "rtl-auth-36651",
-   storageBucket: "rtl-auth-36651.appspot.com",
-   messagingSenderId: "217524393747",
-   appId: "1:217524393747:web:f5e8d318c2eecb244d6ce6",
-};
-firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    // Check if the user is logged in
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            let btn = document.getElementById('On');
+    let btn = document.getElementById('On');
     const slider = document.getElementById("myRange");
     
     if(btn) {
@@ -321,27 +303,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-            // User is logged in, continue with the page logic
-
-            // Your existing code here...
-            let btn = document.getElementById('On');
-            const slider = document.getElementById("myRange");
-
-            if (btn) {
-                // ... (rest of your existing code)
-                btn.addEventListener('click', function () {
-                    // ... (rest of your existing code)
-                });
-            }
-
-            // ... (rest of your existing code)
-
-            // Continue with the rest of your code...
-
-        } else {
-            // User is not logged in, redirect to index.html
-            window.location.replace("index.html");
-        }
-    });
-
-});
