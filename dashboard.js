@@ -1,6 +1,23 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
 
+   //firebase
+   import { getAuth, onAuthStateChanged } from "firebase/auth";
+   const auth = getAuth();
+   onAuthStateChanged(auth, (user) => {
+   if (user) {
+    // User is signed in
+   const uid = user.uid;
+    // Redirect to the authorized page (e.g., UserActivity.html)
+    window.location.href = 'UserActivity.html';
+  } else {
+    // User is signed out
+    // Redirect to the index page for not logged in users
+    window.location.href = 'index.html';
+   }
+   });
+
+
    
 
     let btn = document.getElementById('On');
