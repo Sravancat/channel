@@ -1,18 +1,7 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
-    function onStart() {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // User is signed in, redirect to UserActivity
-            window.location.href = 'dashboard.html';
-        }
-    });
-    }
-    window.onload = function() {
-    onStart();
-    };
 
-
+   
 
     let btn = document.getElementById('On');
     const slider = document.getElementById("myRange");
