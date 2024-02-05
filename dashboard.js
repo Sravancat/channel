@@ -2,21 +2,17 @@
 document.addEventListener('DOMContentLoaded', function () {
 
    //firebase
-   import { getAuth, onAuthStateChanged } from "firebase/auth";
+   import { getAuth } from "firebase/auth";
    const auth = getAuth();
-   onAuthStateChanged(auth, (user) => {
+   const user = auth.currentUser;
    if (user) {
     // User is signed in
-   const uid = user.uid;
-    // Redirect to the authorized page (e.g., UserActivity.html)
-    window.location.href = 'UserActivity.html';
-  } else {
-    // User is signed out
-    // Redirect to the index page for not logged in users
+    // You can add additional logic here if needed
+    console.log("User is signed in");
+   } else {
+    // No user is signed in, redirect to the index page
     window.location.href = 'index.html';
    }
-   });
-
 
    
 
