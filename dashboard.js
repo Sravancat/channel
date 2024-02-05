@@ -1,11 +1,7 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
 
-firebase.auth().onAuthStateChanged(user => {
-   if(!user) {
-      window.location = 'login.html'; //If User is not logged in, redirect to login page
-   }
-});
+
 
     let btn = document.getElementById('On');
     const slider = document.getElementById("myRange");
