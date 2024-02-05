@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in, redirect to UserActivity
-            window.location.href = 'UserActivity.html';
+            window.location.href = 'dashboard.html';
         }
     });
     }
