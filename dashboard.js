@@ -1,18 +1,32 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
 
-   //firebase
-   import { getAuth } from "firebase/auth";
-   const auth = getAuth();
-   const user = auth.currentUser;
-   if (user) {
-    // User is signed in
-    // You can add additional logic here if needed
-    console.log("User is signed in");
-   } else {
-    // No user is signed in, redirect to the index page
-    window.location.href = 'index.html';
-   }
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js';
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDSAAqD1a73N5REtR8zYRwFxEm-oyhYtmA",
+   authDomain: "rtl-auth-36651.firebaseapp.com",
+   databaseURL: "https://rtl-auth-36651-default-rtdb.firebaseio.com",
+   projectId: "rtl-auth-36651",
+   storageBucket: "rtl-auth-36651.appspot.com",
+   messagingSenderId: "217524393747",
+   appId: "1:217524393747:web:f5e8d318c2eecb244d6ce6",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is logged in
+    console.log("User is logged in:", user.uid);
+    // Call function to retrieve and display user data
+    displayUserData(user);
+  } else {
+    // User is not logged in
+    console.log("User is not logged in");
+  }
+});
 
    
 
