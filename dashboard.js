@@ -1,5 +1,16 @@
 // Relay button(power supply)
 document.addEventListener('DOMContentLoaded', function () {
+    function onStart() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in, redirect to UserActivity
+            window.location.href = 'UserActivity.html';
+        }
+    });
+    }
+    window.onload = function() {
+    onStart();
+    };
 
 
 
