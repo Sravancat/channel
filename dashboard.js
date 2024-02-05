@@ -13,24 +13,13 @@ const firebaseConfig = {
    messagingSenderId: "217524393747",
    appId: "1:217524393747:web:f5e8d318c2eecb244d6ce6",
 };
+firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is logged in
-    console.log("User is logged in:", user.uid);
-    // Call function to retrieve and display user data
-    displayUserData(user);
-  } else {
-    // User is not logged in
-    console.log("User is not logged in");
-  }
-});
-
-   
-
-    let btn = document.getElementById('On');
+    // Check if the user is logged in
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            let btn = document.getElementById('On');
     const slider = document.getElementById("myRange");
     
     if(btn) {
@@ -332,3 +321,27 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+            // User is logged in, continue with the page logic
+
+            // Your existing code here...
+            let btn = document.getElementById('On');
+            const slider = document.getElementById("myRange");
+
+            if (btn) {
+                // ... (rest of your existing code)
+                btn.addEventListener('click', function () {
+                    // ... (rest of your existing code)
+                });
+            }
+
+            // ... (rest of your existing code)
+
+            // Continue with the rest of your code...
+
+        } else {
+            // User is not logged in, redirect to index.html
+            window.location.replace("index.html");
+        }
+    });
+
+});
